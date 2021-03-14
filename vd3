@@ -1,0 +1,37 @@
+#include<graphics.h>
+#include<math.h>
+#include<stdio.h>
+#include<bits/stdc++.H>
+using namespace std;
+
+float m;
+
+void TH1(int xa,int ya,int xb,int yb)
+{
+	float x;
+	float y;
+		m = float(yb-ya)/(xb-xa);
+		if(m<0){
+		
+		m=m*-1;}
+		cout << m;
+	printf("he so goc = %f\n",m);
+	initwindow(400,400);
+	x=xa;
+	y=ya;
+	putpixel(x,y,GREEN);
+	while(y<yb)
+	{ 
+		y++;
+		x=x+(1/m);
+		printf("(%f,%f)\n",x,round(y));
+		putpixel(x,y,RED);
+		delay(100);
+			}
+}
+	
+int main()
+{
+	TH1(100,100,150,200);
+	getch();
+}
